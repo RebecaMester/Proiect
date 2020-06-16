@@ -76,6 +76,27 @@ public class login {
         JButton btnNewButton = new JButton("LOGIN");
         btnNewButton.setBounds(96, 196, 89, 23);
         frame.getContentPane().add(btnNewButton);
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e)
+            {
+
+                String nume = textField.getText();
+                String parola = passwordField.getText();
+                ArrayList<Student> studenti=creareJSON.getDriver();
+                Iterator<Student> it=studenti.iterator();
+                while(it.hasNext())
+                {
+                    Student s=it.next();
+                    if(s.getUsername().equals(nume) && s.getPassword().equals(parola))
+                    {
+
+                        frame.setVisible(false);
+                    }
+                }
+
+            }
+
+        });
 
         frame.setVisible(true);
 

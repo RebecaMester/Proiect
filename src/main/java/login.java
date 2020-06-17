@@ -104,6 +104,7 @@ public class login {
         JButton btnNewButton_1 = new JButton("CREARE CONT");
 
         btnNewButton_1.setBounds(205, 196, 134, 23);
+
         frame.getContentPane().add(btnNewButton_1);
 
         JLabel lblNewLabel_3 = new JLabel("STUDENT login");

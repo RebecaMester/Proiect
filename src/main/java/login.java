@@ -90,6 +90,7 @@ public class login {
                     if(s.getUsername().equals(nume) && s.getPassword().equals(parola))
                     {
 
+
                         frame.setVisible(false);
                     }
                 }
@@ -102,6 +103,13 @@ public class login {
 
 
         JButton btnNewButton_1 = new JButton("CREARE CONT");
+        btnNewButton_1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new CreareCont();
+                frame.setVisible(false);
+            }
+        });
+
 
         btnNewButton_1.setBounds(205, 196, 134, 23);
 

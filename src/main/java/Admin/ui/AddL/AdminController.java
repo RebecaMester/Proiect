@@ -1,5 +1,6 @@
 package Admin.ui.AddL;
 
+import Admin.ui.Dashboard.MainController;
 import Admin.ui.dbUtil.dbConnection2;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -168,5 +169,30 @@ public class AdminController implements Initializable
     this.email.setText("");
     this.adresa.setText("");
     this.telefon.setText("");
+  }
+
+  public void sendOTP(ActionEvent actionEvent) {
+    loadWindow(getClass().getResource("/AddL/FXMLDocument.fxml"), "Trimite notificare", null);
+  }
+  public static Object loadWindow(URL loc, String title, Stage parentStage) {
+    Object controller = null;
+    try {
+      FXMLLoader loader = new FXMLLoader(loc);
+      Parent parent = loader.load();
+      controller = loader.getController();
+      Stage stage = null;
+      if (parentStage != null) {
+        stage = parentStage;
+      } else {
+        stage = new Stage(StageStyle.DECORATED);
+      }
+      stage.setTitle(title);
+      stage.setScene(new Scene(parent));
+      stage.show();
+
+    } catch (IOException ex) {
+      Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    return controller;
   }
 }

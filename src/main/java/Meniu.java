@@ -104,6 +104,15 @@ public class Meniu {
 
         frame.setVisible(true);
 
+        frame.setVisible(true);
+        btnNewButton_2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Imprumut();
+                frame.setVisible(false);
+            }
+        });
+
+
 
 
 

@@ -57,7 +57,16 @@ public class Carte implements Comparable<Carte> {
 
       //  return this.getAutor().compareTo(c.getAutor());
     }
+    public boolean equals(Object o) {
+        if(o instanceof Carte)
+        {
+            Carte s=(Carte)o;
+            return (s.getTitlu().equals(this.getTitlu()) && s.getDisponibilitate().equals(this.getDisponibilitate()));
+        }
 
+        else
+            return false;
+    }
     @Override
     public String toString() {
         return "Carte{" +

@@ -126,6 +126,13 @@ public class BookController implements Initializable
             System.err.println("Got an exception!");
             System.err.println(e.getMessage());
         }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Adăugare cu succes");
+        String s ="Cartea a fost adăugată cu succes! ";
+        alert.setContentText(s);
+        alert.show();
+        TimeUnit.SECONDS.sleep(1);
+        alert.close();
 
     }
 

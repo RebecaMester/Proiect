@@ -115,6 +115,22 @@ public class Meniu {
 
 
 
+        frame.setVisible(true);
+        btnNewButton_3.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Returnare();
+                frame.setVisible(false);
+            }
+        });
+
+
+
+
+
+
+
+
+
 
 
 

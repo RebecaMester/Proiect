@@ -86,6 +86,14 @@ public class Meniu {
         lblNewLabel.setBounds(36, 92, 128, 155);
         frame.getContentPane().add(lblNewLabel);
 
+        btnNewButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Actualizare();
+                frame.setVisible(false);
+            }
+        });
+
+        frame.setVisible(true);
 
 
 

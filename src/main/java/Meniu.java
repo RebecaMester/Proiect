@@ -123,6 +123,14 @@ public class Meniu {
             }
         });
 
+        frame.setVisible(true);
+        btnNewButton_4.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                new Rezervare();
+                frame.setVisible(false);
+            }
+        });
+
 
 
 

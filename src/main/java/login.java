@@ -90,7 +90,7 @@ public class login {
                     if(s.getUsername().equals(nume) && s.getPassword().equals(parola))
                     {
 
-
+                        new Meniu();
                         frame.setVisible(false);
                     }
                 }

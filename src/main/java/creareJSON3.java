@@ -107,6 +107,35 @@ public class creareJSON3 {
 
     }
 
+    public static void uppdate2(ArrayList<Carte> m)
+    {
+
+        Iterator<Carte> it=m.iterator();
+        JSONArray list = new JSONArray();
+
+        while(it.hasNext())
+        {
+            Carte c=it.next();
+            JSONObject obj2 = new JSONObject();
+            obj2.put("titlu",c.getTitlu());
+            obj2.put("autor", c.getAutor());
+            obj2.put("categorie", c.getCategorie());
+            obj2.put("data publicarii", c.getData());
+            obj2.put("disponibilitate", c.getDisponibilitate());
+            list.add(obj2);
+        }
+
+
+        try {
+            FileWriter file = new FileWriter("src/resources/customers3.json");
+            file.write(list.toJSONString());
+            file.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     public static void main(String args[])
     {
         creareJSON3.create();

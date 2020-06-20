@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+
+<StackPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="625.0" prefWidth="1000.0" styleClass="custom-pane" stylesheets="@/tema.css" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Admin.ui.Dashboard.MainController">
+    <children>
+        <JFXDrawer fx:id="drawer" defaultDrawerSize="150.0" resizableOnDrag="true" resizeContent="true" styleClass="jfx-drawer" />
+        <AnchorPane fx:id="rootAnchorPane" prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <AnchorPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0">
+                    <children>
+                        <JFXTabPane fx:id="mainTabPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <tabs>
+                                <Tab closable="false" styleClass="tab-main" text="ADMIN DASHBOARD">
+                                    <content>
+                                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="228.0" fitWidth="218.0" layoutX="69.0" layoutY="171.0" onMouseClicked="#handleAddLib" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@6384422.png" />
+                                       </image>
+                                    </ImageView>
+
+                                    <Line endX="120.4000244140625" endY="5.4000244140625" layoutX="169.0" layoutY="138.0" startX="-102.59999084472656" startY="5.0" stroke="CORAL" strokeWidth="30.0" />
+                                    <Line endX="-53.5999755859375" endY="-64.5999755859375" layoutX="353.0" layoutY="215.0" startX="-53.5999755859375" startY="197.800048828125" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="-53.5999755859375" endY="-64.5999755859375" layoutX="110.0" layoutY="213.0" startX="-53.5999755859375" startY="197.800048828125" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="124.4000244140625" endY="-0.199951171875" layoutX="175.0" layoutY="418.0" startX="-119.00001525878906" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="-53.5999755859375" endY="-64.5999755859375" layoutX="395.0" layoutY="221.0" startX="-53.5999755859375" startY="197.800048828125" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="-53.5999755859375" endY="-64.5999755859375" layoutX="706.0" layoutY="221.0" startX="-53.5999755859375" startY="197.800048828125" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="160.00006103515625" layoutX="491.0" layoutY="419.0" startX="-148.79998779296875" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="188.39996337890625" endY="5.0" layoutX="454.0" layoutY="139.0" startX="-102.59999084472656" startY="5.0" stroke="CORAL" strokeWidth="30.0" />
+                                    <Line endX="-53.5999755859375" endY="-87.5999755859375" layoutX="737.0" layoutY="222.0" startX="-53.5999755859375" startY="189.72900390625" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="176.800048828125" endY="5.0" layoutX="796.0" layoutY="139.0" startX="-102.59999084472656" startY="5.0" stroke="CORAL" strokeWidth="30.0" />
+                                    <Line endX="-53.5999755859375" endY="-64.5999755859375" layoutX="1036.0" layoutY="223.0" startX="-53.5999755859375" startY="188.72900390625" stroke="CORAL" strokeWidth="10.0" />
+                                    <Line endX="160.4000244140625" endY="1.800048828125" layoutX="822.0" layoutY="418.0" startX="-138.5999755859375" startY="0.800048828125" stroke="CORAL" strokeWidth="10.0" />
+                                 </children>
+                                        </AnchorPane>
+                                    </content>
+                                </Tab>
+                            </tabs>
+                        </JFXTabPane>
+                    </children>
+                </AnchorPane>
+                <MenuBar AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                        <Menu mnemonicParsing="false" text="File">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleMenuClose" text="Ieșire" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Add">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleMenuAddMember" text="Adaugă bibliotecar" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="View">
+                            <items>
+                                <MenuItem mnemonicParsing="false" onAction="#handleMenuFullScreen" text="Full Screen" />
+                            </items>
+                        </Menu>
+                    </menus>
+                </MenuBar>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

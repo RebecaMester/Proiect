@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="books" uuid="2fb5c426-3c53-4262-9968-03886df3c881">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Rebeca\Desktop\Proiect-master\src\main\resources\AddBook\books.sqlite</jdbc-url>
+    </data-source>
+  </component>
+</project>

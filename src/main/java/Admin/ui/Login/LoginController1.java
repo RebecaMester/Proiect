@@ -29,8 +29,48 @@ public class LoginController1 {
     @FXML
     private JFXTextField username;
 
-    public void handleLoginButtonAction(ActionEvent actionEvent) {
+    public static JSONArray readFromFile(String fileName){
+        JSONParser parser=new JSONParser();
+        JSONArray list=new JSONArray();
+        try{
+            Reader reader=new FileReader(fileName);
+            list=(JSONArray)parser.parse(reader);
+        }catch(IOException e){
+            e.printStackTrace();
+        }catch(ParseException e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 
+    public static ArrayList<LibrarianData> getDriver() {
+        JSONArray list = readFromFile("src/main/resources/Databases/Admin.json");
+        ArrayList<LibrarianData> administrator = new ArrayList<LibrarianData>();
+        Iterator<JSONObject> it = list.iterator();
+        while (it.hasNext()) {
+            JSONObject obj = it.next();
+            String objInt = (String) obj.get("Username");
+            String objInt2 = (String) obj.get("Password");
+            LibrarianData s = new LibrarianData(objInt, objInt2);
+            administrator.add(s);
+        }
+        return administrator;
+    }
+
+    public void handleLoginButtonAction(ActionEvent actionEvent) {
+        String uname = username.getText();
+        String pass = password.getText();
+        ArrayList<LibrarianData> administrator= getDriver();
+        Iterator<LibrarianData> it=administrator.iterator();
+        while(it.hasNext())
+        {
+            LibrarianData s=it.next();
+            if(s.getEmail().equals(uname) && s.getPass().equals(DigestUtils.shaHex(pass)))
+            {
+                closeStage();
+                loadMain();
+            }
+        }
     }
 
     @FXML
@@ -42,4 +82,17 @@ public class LoginController1 {
         ((Stage) username.getScene().getWindow()).close();
     }
 
+    void loadMain() {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/AddL/main.fxml"));
+            Stage stage = new Stage(StageStyle.DECORATED);
+            stage.setTitle("Administrator");
+            stage.setScene(new Scene(parent));
+            stage.show();
+        }
+        catch (IOException ex) {
+            System.err.println("Exceptie!");
+            System.err.println(ex.getMessage());
+        }
+    }
 }

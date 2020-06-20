@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<AnchorPane maxHeight="-Infinity" maxWidth="2000.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="table-context" stylesheets="@/tema.css" xmlns="http://javafx.com/javafx/8.0.241" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bibliotecar.ui.EditBook.BookController">
+   <children>
+      <TabPane layoutY="1.0" prefHeight="738.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Cărți">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="753.0" prefWidth="1500.0">
+                     <children>
+                        <HBox layoutX="321.0" prefHeight="682.0" prefWidth="1500.0">
+                           <children>
+                              <TableView fx:id="studenttable" prefHeight="682.0" prefWidth="1500.0" styleClass="table-context">
+                                <columns>
+                                  <TableColumn fx:id="idcolumn" prefWidth="41.600006103515625" text="ID" />
+                                  <TableColumn fx:id="titlecolumn" prefWidth="152.79995727539062" text="Titlu" />
+                                    <TableColumn fx:id="authorcolumn" prefWidth="171.20001220703125" text="Autor" />
+                                    <TableColumn fx:id="yearcolumn" prefWidth="108.00006103515625" text="An publicație" />
+                                    <TableColumn fx:id="subjectcolumn" prefWidth="145.5999755859375" text="Subiect" />
+                                    <TableColumn fx:id="editioncolumn" prefWidth="96.00006103515625" text="Ediție" />
+                                    <TableColumn fx:id="pagescolumn" prefWidth="120.800048828125" text="Număr pag" />
+                                    <TableColumn fx:id="copiescolumn" prefWidth="152.800048828125" text="Număr exemplare" />
+                                    <TableColumn fx:id="shelfcolumn" prefWidth="184.0" text="Raft" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </HBox>
+                        <Label alignment="CENTER" contentDisplay="TOP" layoutX="-3.0" layoutY="7.0" prefHeight="34.0" prefWidth="324.0" text="Adaugă detaliile cărții">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <VBox layoutY="2.0" prefHeight="518.0" prefWidth="318.0">
+                           <children>
+                              <JFXTextField fx:id="id" promptText="ID">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="titlu" promptText="Titlu">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="autor" promptText="Autor">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="an" promptText="An publicație">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="subiect" promptText="Subiect">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="editie" promptText="Ediție">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="pag" promptText="Număr pagini">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="exemplare" promptText="Număr exemplare">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="raft" promptText="Număr raft">
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXTextField>
+                              <JFXButton onAction="#EditBook" prefHeight="26.0" prefWidth="300.0" text="Editeaza carte">
+                                 <VBox.margin>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                              <JFXButton layoutX="20.0" layoutY="252.0" onAction="#clearFields" prefHeight="26.0" prefWidth="300.0" text="Clear">
+                                 <VBox.margin>
+                                    <Insets bottom="3.0" left="10.0" right="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -84,4 +84,12 @@ public class MainController  {
         }
         return controller;
     }
+
+    public void handleEmiteCard(MouseEvent mouseEvent) {
+        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
+    }
+
+    public void handleMenuAddCard(ActionEvent actionEvent) {
+        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
+    }
 }

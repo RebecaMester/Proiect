@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="2000.0" minHeight="-Infinity" minWidth="-Infinity" styleClass="table-context" stylesheets="@/tema.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Bibliotecar.ui.ViewStudents.StudentController">
+   <children>
+      <TabPane layoutY="1.0" prefHeight="738.0" prefWidth="1500.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Bibliotecari">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="753.0" prefWidth="1500.0">
+                     <children>
+                        <HBox layoutX="321.0" prefHeight="682.0" prefWidth="1500.0" />
+                        <Label alignment="CENTER" contentDisplay="TOP" layoutX="-3.0" layoutY="153.0" prefHeight="34.0" prefWidth="324.0" text="Adaugă detaliile studentului">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="80.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@1421105.png" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="studenttable" prefHeight="682.0" prefWidth="1500.0" styleClass="table-context">
+                          <columns>
+                            <TableColumn fx:id="idcolumn" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="firstnamecolumn" prefWidth="204.0" text="Nume" />
+                              <TableColumn fx:id="lastnamecolumn" prefWidth="223.5999755859375" text="Prenume" />
+                              <TableColumn fx:id="emailcolumn" prefWidth="226.0" text="Email" />
+                              <TableColumn fx:id="adresacolumn" prefWidth="229.5999755859375" text="Adresa" />
+                              <TableColumn fx:id="telefoncolumn" prefWidth="229.5999755859375" text="Număr de telefon" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

@@ -34,33 +34,49 @@ public class CardController implements Initializable {
         JSONObject obj = new JSONObject();
         JSONArray jrr = new JSONArray();
         JSONParser jp = new JSONParser();
-        try{
+        try {
             FileReader file = new FileReader("src/main/resources/Databases/Card.json");
-            jrr=(JSONArray)jp.parse(file);
-        }catch(Exception ex){
+            jrr = (JSONArray) jp.parse(file);
+        } catch (Exception ex) {
 
         }
         obj.put("Nume", username.getText());
         obj.put("Prenume", username2.getText());
         obj.put("ID", ID.getText());
         jrr.add(obj);
-        try{
-            FileWriter file = new FileWriter("src/main/resources/Databases/Card.json");
-            file.write(jrr.toJSONString());
-            file.close();
-        }catch(Exception ex){
-            System.err.println("Exceptie!");
-            System.err.println(ex.getMessage());
+        if (!(username.getText().isEmpty() || username2.getText().isEmpty() || ID.getText().isEmpty())) {
+            try {
+                FileWriter file = new FileWriter("src/main/resources/Databases/Card.json");
+                file.write(jrr.toJSONString());
+                file.close();
+            } catch (Exception ex) {
+                System.err.println("Exceptie!");
+                System.err.println(ex.getMessage());
+            }
         }
 
         //crearea unei casete de text
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setHeaderText("Emitere cu succes");
-        String s ="Cardul a fost emis cu succes! ";
-        alert.setContentText(s);
-        alert.show();
-        TimeUnit.SECONDS.sleep(1);
-        alert.close();
+       if(username.getText().isEmpty() || username2.getText().isEmpty() || ID.getText().isEmpty())
+       {
+           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+           alert.setHeaderText("Emitere eșuată!");
+           String s ="Empty field! ";
+           alert.setContentText(s);
+           alert.show();
+           TimeUnit.SECONDS.sleep(1);
+           alert.close();
+       }
+        else
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("Emitere cu succes");
+                String s ="Cardul a fost emis cu succes! ";
+                alert.setContentText(s);
+                alert.show();
+                TimeUnit.SECONDS.sleep(1);
+                alert.close();
+            }
+
     }
 
     public void handleCancelButtonAction(ActionEvent actionEvent) {

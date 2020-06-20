@@ -57,9 +57,26 @@ public class MainController  {
         mainTabPane.tabMinWidthProperty().bind(rootAnchorPane.widthProperty().divide(mainTabPane.getTabs().size()).subtract(15));
     }
 
+    @FXML
+    private void handleMenuOverdueNotification(ActionEvent event) {
+        loadWindow(getClass().getResource("/SendEmail/Email.fxml"), "Trimite notificare", null);
+    }
+
+    public void handleMenuAddCard(ActionEvent actionEvent) {
+        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
+    }
 
     public void handleAddLib(MouseEvent mouseEvent) {
         loadWindow(getClass().getResource("/AddL/Admin.fxml"), "Adaugă bibliotecar", null);
+
+    }
+
+    public void handleEmiteCard(MouseEvent mouseEvent) {
+        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
+    }
+
+    public void handleSendEmail(MouseEvent mouseEvent) {
+        loadWindow(getClass().getResource("/SendEmail/Email.fxml"), "Trimite notificare", null);
 
     }
 
@@ -83,13 +100,5 @@ public class MainController  {
             Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
         }
         return controller;
-    }
-
-    public void handleEmiteCard(MouseEvent mouseEvent) {
-        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
-    }
-
-    public void handleMenuAddCard(ActionEvent actionEvent) {
-        loadWindow(getClass().getResource("/LibraryCard/card.fxml"), "Emite card", null);
     }
 }

@@ -134,6 +134,12 @@
     -fx-background-image: url("/Login/books1.jpg");
 }
 
+.custom-pane1{
+    -fx-pref-height : 650;
+    -fx-pref-width : 1036;
+    -fx-background-image: url("/Login/books1.jpg");
+}
+
 /*TableView Default*/
 .table-view{
     -fx-background-color: #FFFFCC;

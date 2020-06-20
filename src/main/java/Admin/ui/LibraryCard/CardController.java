@@ -52,6 +52,15 @@ public class CardController implements Initializable {
             System.err.println("Exceptie!");
             System.err.println(ex.getMessage());
         }
+
+        //crearea unei casete de text
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Emitere cu succes");
+        String s ="Cardul a fost emis cu succes! ";
+        alert.setContentText(s);
+        alert.show();
+        TimeUnit.SECONDS.sleep(1);
+        alert.close();
     }
 
     public void handleCancelButtonAction(ActionEvent actionEvent) {

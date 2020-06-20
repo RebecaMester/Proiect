@@ -58,7 +58,41 @@ public class Login1stController {
         return bibliotecari;
     }
 
+    public void handleLoginButtonAction(ActionEvent actionEvent) {
+        String uname = username.getText();
+        String OTP = otp.getText();
+        String pass = password.getText();
+        ArrayList<LibrarianData> studenti= getDriver();
+        Iterator<LibrarianData> it=studenti.iterator();
+        while(it.hasNext())
+        {
+            LibrarianData s=it.next();
+            if(s.getEmail().equals(uname) && s.getPass().equals(OTP))
+            {
+                JSONObject obj = new JSONObject();
+                JSONArray jrr = new JSONArray();
+                JSONParser jp = new JSONParser();
+                try{
+                    FileReader file = new FileReader("LibrarianLogin.json");
+                    jrr=(JSONArray)jp.parse(file);
+                }catch(Exception ex){
 
+                }
+
+                obj.put("Username", uname);
+                obj.put("Password", DigestUtils.shaHex(pass));
+                jrr.add(obj);
+                try{
+                    FileWriter file = new FileWriter("LibrarianLogin.json");
+                    file.write(jrr.toJSONString());
+                    file.close();
+                }catch(Exception ex){
+                }
+                closeStage();
+                loadLogin();
+            }
+        }
+    }
 
     @FXML
     private void handleCancelButtonAction(ActionEvent event) {

@@ -73,12 +73,24 @@ public class EmailController implements Initializable {
              message1.setText(msg);
              
              Transport.send(message1);
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setHeaderText("Trimitere cu succes");
+             String s ="Email-ul a fost trimis cu succes! ";
+             alert.setContentText(s);
+             alert.show();
+             TimeUnit.SECONDS.sleep(1);
+             alert.close();
          }   
          
          catch(Exception e)
          {
-             System.err.println("Exceptie!");
-             System.err.println(e.getMessage());
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+             alert.setHeaderText("Eroare");
+             String s ="Email-ul nu a putut fi trimis! ";
+             alert.setContentText(s);
+             alert.show();
+             TimeUnit.SECONDS.sleep(1);
+             alert.close();
          }
     }
     

@@ -9,13 +9,9 @@
     <version>1.0-SNAPSHOT</version>
 
 
-    <dependencies><
+    <dependencies>
 
-
-
-            <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
-
-
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>

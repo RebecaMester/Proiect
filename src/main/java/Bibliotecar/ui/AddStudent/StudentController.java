@@ -6,10 +6,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -18,6 +15,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class StudentController
   implements Initializable
@@ -88,8 +86,7 @@ public class StudentController
   }
 
   @FXML
-  private void addStudent(ActionEvent event)
-  {
+  private void addStudent(ActionEvent event) throws InterruptedException {
     String sql = "INSERT INTO students (id, fname, lname, email, adresa, telefon) VALUES (? , ?, ?, ?, ?, ?)";
     try
     {
@@ -109,6 +106,13 @@ public class StudentController
       System.err.println("Got an exception!");
       System.err.println(e.getMessage());
     }
+    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    alert.setHeaderText("Adaugare cu succes");
+    String s ="Studentul a fost adaugat cu succes! ";
+    alert.setContentText(s);
+    alert.show();
+    TimeUnit.SECONDS.sleep(1);
+    alert.close();
   }
   
   @FXML

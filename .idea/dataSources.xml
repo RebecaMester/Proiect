@@ -7,5 +7,11 @@
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\Rebeca\Desktop\Proiect-master\src\main\resources\AddBook\books.sqlite</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="students" uuid="5bd46e89-ec5f-47d8-931b-8a133e1df2c5">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\Rebeca\Desktop\Proiect-master\src\main\resources\AddStudent\students.sqlite</jdbc-url>
+    </data-source>
   </component>
 </project>

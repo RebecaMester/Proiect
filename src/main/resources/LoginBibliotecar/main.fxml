@@ -60,7 +60,6 @@
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#handleMenuViewBook" text="Catalog cărți" />
                         <MenuItem mnemonicParsing="false" onAction="#handleMenuViewMemberList" text="Listă studenți" />
-                        <MenuItem mnemonicParsing="false" onAction="#handleIssuedList" text="Listă cărți împrumutate" />
                         <MenuItem mnemonicParsing="false" onAction="#handleMenuFullScreen" text="Full Screen" />
                      </items>
                   </Menu>

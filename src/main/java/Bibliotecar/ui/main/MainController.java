@@ -119,7 +119,6 @@ public class MainController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        initDrawer();
         initComponents();
     }
 
@@ -151,7 +150,7 @@ public class MainController implements Initializable{
 
     @FXML
     private void handleMenuAddMember(ActionEvent event) {
-        LibrarianUtil.loadWindow(getClass().getResource("/Bibliotecar/ui/AddStudent/Student.fxml"), "Adauga studenti", null);
+        LibrarianUtil.loadWindow(getClass().getResource("/AddStudent/Student.fxml"), "Adauga studenti", null);
     }
 
     @FXML
@@ -162,48 +161,13 @@ public class MainController implements Initializable{
 
     @FXML
     private void handleMenuViewMemberList(ActionEvent event) {
-        LibrarianUtil.loadWindow(getClass().getResource("/Bibliotecar/ui/ViewStudents/Student.fxml"), "Lista studenti", null);
-    }
-
-    @FXML
-    private void handleIssuedList(ActionEvent event) {
-        Object controller = LibrarianUtil.loadWindow(getClass().getResource("/Bibliotecar/ui/issuedlist/issued_list.fxml"), "Lista carti imprumutate", null);
-        if (controller != null) {
-
-        }
+        LibrarianUtil.loadWindow(getClass().getResource("/ViewStudents/Student.fxml"), "Lista studenti", null);
     }
 
     @FXML
     private void handleMenuFullScreen(ActionEvent event) {
         Stage stage = getStage();
         stage.setFullScreen(!stage.isFullScreen());
-    }
-
-    private void initDrawer() {
-        /*try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Bibliotecar/ui/main/toolbar/toolbar.fxml"));
-            VBox toolbar = loader.load();
-            drawer.setSidePane(toolbar);
-            ToolbarController controller = loader.getController();
-            controller.setBookReturnCallback(this);
-        } catch (IOException ex) {
-            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        HamburgerSlideCloseTransition task = new HamburgerSlideCloseTransition(hamburger);
-        task.setRate(-1);
-        hamburger.addEventHandler(MouseEvent.MOUSE_CLICKED, (Event event) -> {
-            drawer.toggle();
-        });
-        drawer.setOnDrawerOpening((event) -> {
-            task.setRate(task.getRate() * -1);
-            task.play();
-            drawer.toFront();
-        });
-        drawer.setOnDrawerClosed((event) -> {
-            drawer.toBack();
-            task.setRate(task.getRate() * -1);
-            task.play();
-        });*/
     }
 
     private void clearEntries() {

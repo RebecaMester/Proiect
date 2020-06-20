@@ -6,16 +6,14 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.FileNotFoundException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
+import java.util.concurrent.TimeUnit;
 
 public class BookController implements Initializable
 {
@@ -139,7 +137,7 @@ public class BookController implements Initializable
 
 
     @FXML
-    private void EditBook(ActionEvent event) {
+    private void EditBook(ActionEvent event) throws InterruptedException {
         /*Connection conn = null;
         Statement st = null;
         try {
@@ -171,6 +169,14 @@ public class BookController implements Initializable
             System.err.println(e.getMessage());
         }
        refresh();
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setHeaderText("Editare cu succes");
+        String s ="Cartea a fost editata cu succes! ";
+        alert.setContentText(s);
+        alert.show();
+        TimeUnit.SECONDS.sleep(1);
+        alert.close();
     }
         @FXML
     private void clearFields(ActionEvent event)

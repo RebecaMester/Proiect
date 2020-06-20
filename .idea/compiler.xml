@@ -9,6 +9,7 @@
         <module name="Proiect-master" />
         <module name="Proiect-fis" />
         <module name="Proiect" />
+        <module name="FIS-Proiect" />
         <module name="FIS-proiect" />
       </profile>
     </annotationProcessing>

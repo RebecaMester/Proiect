@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Proiect-master" />
-        <module name="Proiect-fis" />
-        <module name="Proiect" />
-        <module name="FIS-Proiect" />
         <module name="FIS-proiect" />
+        <module name="Proiect-fis" />
+        <module name="FIS-Proiect" />
+        <module name="Proiect-master" />
+        <module name="proiectFIS1" />
+        <module name="Proiect" />
       </profile>
     </annotationProcessing>
   </component>

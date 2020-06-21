@@ -15,6 +15,12 @@
    // -fx-pref-width : 1036;
 }
 
+.root2{
+    //-fx-background-image: url("/Login/books.jpg");
+    -fx-pref-height : 715;
+    -fx-pref-width : 1036;
+}
+
 .login{
           //-fx-background-image: url("/Login/books.jpg");
          -fx-pref-height : 705;
